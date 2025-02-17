@@ -5,6 +5,6 @@ A simple digital clock built using HTML, CSS, and JavaScript. It displays the cu
 
 🎨 Features:
 
-Stylish neon-glow digital clock
-Real-time time and date display
-Responsive and centered design
+Stylish neon-glow digital clock.
+Real-time time and date display.
+Responsive and centered design.
