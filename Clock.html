@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Digital Clock</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+            body {
+                background-color: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                font-family: 'Orbitron', sans-serif;
+            }
+            
+            .clock-container {
+                text-align: center;
+            }
+            
+            .Clock {
+                color: lime;
+                font-size: 80px;
+                letter-spacing: 7px;
+                text-shadow: 0 0 20px lime, 0 0 40px lime, 0 0 60px lime;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .date {
+                color: white;
+                font-size: 30px;
+                margin-top: 20px;
+                text-shadow: 0 0 10px white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="clock-container">
+            <div id="DigitalClock" class="Clock"></div>
+            <div id="DateDisplay" class="date"></div>
+        </div>
+        <script type="text/javascript">
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var m = date.getMinutes();
+                var s = date.getSeconds();
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+
+                h = (h < 10) ? "0" + h : h;
+                m = (m < 10) ? "0" + m : m;
+                s = (s < 10) ? "0" + s : s;
+
+                document.getElementById("DigitalClock").innerHTML = h + ":" + m + ":" + s + " " + session;
+                document.getElementById("DateDisplay").innerHTML = date.toDateString();
+                
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+    </body>
+</html>
